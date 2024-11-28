@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Tracker Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/themes/base/jquery-ui.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="search-section">
+            <div class="search-bar">
+                <input type="text" id="cityInput" placeholder="Enter city name...">
+                <button id="searchBtn">Search</button>
+                <button id="settingsBtn">⚙️</button>
+            </div>
+            <div class="error" id="error"></div>
+        </div>
+
+        <div class="loading" id="loading">
+            <div class="spinner"></div>
+            <p>Loading weather data...</p>
+        </div>
+
+        <div class="current-weather" id="currentWeather">
+            <h2 id="cityName"></h2>
+            <div class="weather-icon" id="weatherIcon"></div>
+            <div class="temperature" id="temperature"></div>
+            <div class="conditions" id="conditions"></div>
+            <button id="favoriteBtn">Add to Favorites</button>
+        </div>
+
+        <div class="forecast" id="forecast"></div>
+
+        <div class="favorites">
+            <h3>Favorite Cities</h3>
+            <div class="favorites-list" id="favoritesList"></div>
+        </div>
+    </div>
+
+    <div class="settings-dialog" id="settingsDialog" title="Dashboard Settings">
+        <div class="theme-options">
+            <h4>Theme Colors</h4>
+            <div>
+                <label>Primary Background:</label>
+                <input class="color-input" type="color" id="primaryBg" value="#87CEEB">
+            </div>
+            <div>
+                <label>Secondary Background:</label>
+                <input class="color-input" type="color" id="secondaryBg" value="#4682B4">
+            </div>
+            <div>
+                <label>Accent Color:</label>
+                <input class="color-input" type="color" id="accent" value="#FFD700">
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
+    <script src="./app.js"></script>
+</body>
+
+</html>
