@@ -29,134 +29,134 @@ const weatherIcons = {
     '96': { description: 'Thunderstorm with slight hail', icon: 'fa-bolt' },
     '99': { description: 'Thunderstorm with heavy hail', icon: 'fa-bolt' }
 };
-const jsonResponse = {
-    "latitude": 52.52,
-    "longitude": 13.419998,
-    "generationtime_ms": 0.4049539566040039,
-    "utc_offset_seconds": -18000,
-    "timezone": "America/New_York",
-    "timezone_abbreviation": "EST",
-    "elevation": 38,
-    "current_units": {
-        "time": "iso8601",
-        "interval": "seconds",
-        "weather_code": "wmo code"
-    },
-    "current": {
-        "time": "2024-11-27T17:15",
-        "interval": 900,
-        "weather_code": 61
-    },
-    "daily_units": {
-        "time": "iso8601",
-        "weather_code": "wmo code",
-        "temperature_2m_max": "°C",
-        "temperature_2m_min": "°C",
-        "apparent_temperature_max": "°C",
-        "apparent_temperature_min": "°C",
-        "rain_sum": "mm",
-        "showers_sum": "mm",
-        "snowfall_sum": "cm"
-    },
-    "daily": {
-        "time": [
-            "2024-11-27",
-            "2024-11-28",
-            "2024-11-29",
-            "2024-11-30",
-            "2024-12-01",
-            "2024-12-02",
-            "2024-12-03"
-        ],
-        "weather_code": [
-            61,
-            80,
-            45,
-            3,
-            3,
-            61,
-            71
-        ],
-        "temperature_2m_max": [
-            8.8,
-            6.5,
-            5.5,
-            4.4,
-            2.9,
-            7.7,
-            6.5
-        ],
-        "temperature_2m_min": [
-            4.2,
-            4.5,
-            0.3,
-            0.1,
-            -0.1,
-            0.9,
-            1.1
-        ],
-        "apparent_temperature_max": [
-            6.4,
-            2,
-            3,
-            1.3,
-            -0.2,
-            4.9,
-            2.9
-        ],
-        "apparent_temperature_min": [
-            2.1,
-            -0.6,
-            -2.7,
-            -3.1,
-            -3.2,
-            -2.7,
-            -3.2
-        ],
-        "rain_sum": [
-            6.5,
-            9,
-            0,
-            0,
-            0,
-            3.6,
-            0
-        ],
-        "showers_sum": [
-            0,
-            0,
-            0,
-            0,
-            0,
-            0.3,
-            0
-        ],
-        "snowfall_sum": [
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0.07
-        ]
-    }
-}
+// const jsonResponse = {
+//     "latitude": 52.52,
+//     "longitude": 13.419998,
+//     "generationtime_ms": 0.4049539566040039,
+//     "utc_offset_seconds": -18000,
+//     "timezone": "America/New_York",
+//     "timezone_abbreviation": "EST",
+//     "elevation": 38,
+//     "current_units": {
+//         "time": "iso8601",
+//         "interval": "seconds",
+//         "weather_code": "wmo code"
+//     },
+//     "current": {
+//         "time": "2024-11-27T17:15",
+//         "interval": 900,
+//         "weather_code": 61
+//     },
+//     "daily_units": {
+//         "time": "iso8601",
+//         "weather_code": "wmo code",
+//         "temperature_2m_max": "°C",
+//         "temperature_2m_min": "°C",
+//         "apparent_temperature_max": "°C",
+//         "apparent_temperature_min": "°C",
+//         "rain_sum": "mm",
+//         "showers_sum": "mm",
+//         "snowfall_sum": "cm"
+//     },
+//     "daily": {
+//         "time": [
+//             "2024-11-27",
+//             "2024-11-28",
+//             "2024-11-29",
+//             "2024-11-30",
+//             "2024-12-01",
+//             "2024-12-02",
+//             "2024-12-03"
+//         ],
+//         "weather_code": [
+//             61,
+//             80,
+//             45,
+//             3,
+//             3,
+//             61,
+//             71
+//         ],
+//         "temperature_2m_max": [
+//             8.8,
+//             6.5,
+//             5.5,
+//             4.4,
+//             2.9,
+//             7.7,
+//             6.5
+//         ],
+//         "temperature_2m_min": [
+//             4.2,
+//             4.5,
+//             0.3,
+//             0.1,
+//             -0.1,
+//             0.9,
+//             1.1
+//         ],
+//         "apparent_temperature_max": [
+//             6.4,
+//             2,
+//             3,
+//             1.3,
+//             -0.2,
+//             4.9,
+//             2.9
+//         ],
+//         "apparent_temperature_min": [
+//             2.1,
+//             -0.6,
+//             -2.7,
+//             -3.1,
+//             -3.2,
+//             -2.7,
+//             -3.2
+//         ],
+//         "rain_sum": [
+//             6.5,
+//             9,
+//             0,
+//             0,
+//             0,
+//             3.6,
+//             0
+//         ],
+//         "showers_sum": [
+//             0,
+//             0,
+//             0,
+//             0,
+//             0,
+//             0.3,
+//             0
+//         ],
+//         "snowfall_sum": [
+//             0,
+//             0,
+//             0,
+//             0,
+//             0,
+//             0,
+//             0.07
+//         ]
+//     }
+// }
 
-const mockWeatherData = {
-    current: {
-        temp: jsonResponse.daily.temperature_2m_max[0],
-        humidity: 0, // You can include humidity data if available in the original JSON
-        conditions: jsonResponse.daily.weather_code[0],
-        icon: weatherIcons[jsonResponse.daily.weather_code[0]]?.icon
-    },
-    forecast: jsonResponse.daily.time.slice(1).map((date, index) => ({
-        date: date,
-        temp: jsonResponse.daily.temperature_2m_max[index + 1],
-        conditions: jsonResponse.daily.weather_code[index + 1],
-        icon: weatherIcons[jsonResponse.daily.weather_code[index + 1]]?.icon
-    }))
-};
+// const mockWeatherData = {
+//     current: {
+//         temp: jsonResponse.daily.temperature_2m_max[0],
+//         humidity: 0, // You can include humidity data if available in the original JSON
+//         conditions: jsonResponse.daily.weather_code[0],
+//         icon: weatherIcons[jsonResponse.daily.weather_code[0]]?.icon
+//     },
+//     forecast: jsonResponse.daily.time.slice(1).map((date, index) => ({
+//         date: date,
+//         temp: jsonResponse.daily.temperature_2m_max[index + 1],
+//         conditions: jsonResponse.daily.weather_code[index + 1],
+//         icon: weatherIcons[jsonResponse.daily.weather_code[index + 1]]?.icon
+//     }))
+// };
 
 class WeatherDashboard {
     constructor() {
@@ -219,24 +219,23 @@ class WeatherDashboard {
             });
             const data = await geocodeResponse.json()
             const geoData = data.results?.at(0)
-            console.log(data.results?.at(0))
-            // const weatherResponse = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${geoData.latitude}&longitude=${geoData.longitude}&current=weather_code&daily=weather_code,temperature_2m_max,temperature_2m_min,apparent_temperature_max,apparent_temperature_min,rain_sum,showers_sum,snowfall_sum&timezone=America%2FNew_York`)
-            // const jsonResponse = await weatherResponse.json()
 
-            // const mockWeatherData = {
-            //     current: {
-            //         temp: jsonResponse?.daily?.temperature_2m_max[0],
-            //         humidity: 0, // You can include humidity data if available in the original JSON
-            //         conditions: jsonResponse?.daily?.weather_code[0],
-            //         icon: weatherIcons[jsonResponse?.daily?.weather_code[0]]?.icon
-            //     },
-            //     forecast: jsonResponse?.daily?.time.slice(1).map((date, index) => ({
-            //         date: date,
-            //         temp: jsonResponse?.daily?.temperature_2m_max[index + 1],
-            //         conditions: jsonResponse?.daily?.weather_code[index + 1],
-            //         icon: weatherIcons[jsonResponse?.daily?.weather_code[index + 1]]?.icon
-            //     }))
-            // };
+            const weatherResponse = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${geoData.latitude}&longitude=${geoData.longitude}&current=weather_code&daily=weather_code,temperature_2m_max,temperature_2m_min,apparent_temperature_max,apparent_temperature_min,rain_sum,showers_sum,snowfall_sum&timezone=America%2FNew_York`)
+            const jsonResponse = await weatherResponse.json()
+            const mockWeatherData = {
+                current: {
+                    temp: jsonResponse?.daily?.temperature_2m_max[0],
+                    humidity: 0, // You can include humidity data if available in the original JSON
+                    conditions: jsonResponse?.daily?.weather_code[0],
+                    icon: weatherIcons[jsonResponse?.daily?.weather_code[0]]?.icon
+                },
+                forecast: jsonResponse?.daily?.time.slice(1).map((date, index) => ({
+                    date: date,
+                    temp: jsonResponse?.daily?.temperature_2m_max[index + 1],
+                    conditions: jsonResponse?.daily?.weather_code[index + 1],
+                    icon: weatherIcons[jsonResponse?.daily?.weather_code[index + 1]]?.icon
+                }))
+            };
 
 
             await new Promise(resolve => setTimeout(resolve, 1000)); // Simulate API delay
